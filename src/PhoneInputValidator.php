@@ -88,10 +88,12 @@ class PhoneInputValidator extends Validator
         ]);
 
         return <<<JS
-var options = $options, telInput = $(attribute.input);;
+let options = $options; 
+const telInput = document.querySelector(attribute.input);
 
-if($.trim(telInput.val())){
-    if(!telInput.intlTelInput("isValidNumber")){
+if (telInput.value.trim()) {
+    const iti = window.intlTelInput.getInstance(telInput);
+    if (iti && !iti.isValidNumber()) {
         messages.push(options.message);
     }
 }

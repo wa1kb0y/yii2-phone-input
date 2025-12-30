@@ -5,7 +5,6 @@ Yii2 International telephone numbers - Asset Bundle, Behavior, Validator, Widget
 [![Total Downloads](https://poser.pugx.org/borales/yii2-phone-input/downloads.svg)](https://packagist.org/packages/borales/yii2-phone-input)
 [![Latest Unstable Version](https://poser.pugx.org/borales/yii2-phone-input/v/unstable.svg)](https://packagist.org/packages/borales/yii2-phone-input)
 [![License](https://poser.pugx.org/borales/yii2-phone-input/license.svg)](https://packagist.org/packages/borales/yii2-phone-input)
-[![Build Status](https://travis-ci.org/Borales/yii2-phone-input.svg?branch=master)](https://travis-ci.org/Borales/yii2-phone-input)
 
 This extension uses 2 libraries:
 
@@ -17,6 +16,19 @@ Original demo can be found here - [http://jackocnr.com/intl-tel-input.html](http
 ## Installation
 
 The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
+
+Add repository to your composer.json in order to use forked version.
+
+```
+"repositories": [
+ ...
+ {
+   "type": "vcs",
+   "url": "https://github.com/wa1kb0y/yii2-phone-input"
+ }
+ ...
+]
+```
 
 Either run
 
@@ -43,7 +55,7 @@ use borales\extensions\phoneInput\PhoneInput;
 
 echo $form->field($model, 'phone_number')->widget(PhoneInput::className(), [
     'jsOptions' => [
-        'preferredCountries' => ['no', 'pl', 'ua'],
+        'countryOrder' => ['no', 'pl', 'ua'],
     ]
 ]);
 ```

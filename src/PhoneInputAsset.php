@@ -10,15 +10,16 @@ use yii\web\AssetBundle;
  */
 class PhoneInputAsset extends AssetBundle
 {
-    /** @var string */
-    public $sourcePath = '@bower/intl-tel-input';
-    /** @var array */
-    public $css = ['build/css/intlTelInput.css'];
-    /** @var array */
-    public $js = [
-        'build/js/utils.js',
-        'build/js/intlTelInput-jquery.js',
+    /** @inheritdoc */
+    public $sourcePath = '@npm/intl-tel-input/build';
+
+    /** @inheritdoc */
+    public $css = [
+        'css/intlTelInput.min.css'
     ];
-    /** @var array */
-    public $depends = ['yii\web\JqueryAsset'];
+
+    /** @inheritdoc */
+    public $js = [
+        'js/intlTelInputWithUtils.min.js',
+    ];
 }

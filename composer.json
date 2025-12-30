@@ -8,6 +8,7 @@
         "libphonenumber"
     ],
     "minimum-stability": "dev",
+    "prefer-stable": true,
     "license": "BSD-3-Clause",
     "type": "yii2-extension",
     "homepage": "https://github.com/Borales/yii2-phone-input",
@@ -29,8 +30,13 @@
         "url": "https://asset-packagist.org"
     }],
     "require": {
-        "bower-asset/intl-tel-input": "^16",
-        "giggsey/libphonenumber-for-php": "^8",
+        "npm-asset/intl-tel-input": "^25",
+        "giggsey/libphonenumber-for-php": "^9.0",
         "yiisoft/yii2": ">=2.0.1"
+    },
+    "config": {
+        "allow-plugins": {
+            "yiisoft/yii2-composer": true
+        }
     }
 }
